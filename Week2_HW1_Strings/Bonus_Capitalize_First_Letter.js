@@ -18,3 +18,4 @@ endResultString=tempArray.join(' ').toString();
 // output to the console
 console.log(`Your input with capital first letter is :\n "${endResultString}"`);
 
+const arr=[];

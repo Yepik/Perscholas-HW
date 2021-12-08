@@ -123,7 +123,7 @@ let userChoiceOfOperation = Number(
       break;
     }
     default: {
-      console.log("You chose exit GoOd bye sad to see you go");
+      console.log("You chose  Invalid Input, GoOd bye Please try again");
     }
   }
   
