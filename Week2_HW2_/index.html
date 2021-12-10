@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week2_HW2 </title>
+</head>
+<body>
+    <div>
+        <h2>Problem 1</h2>
+        <label>please enter string of number separated by space</label>
+        <input type="text" placeholder="Enter string of numbers separated by spaces" id="inputAttribute_Exercise1">
+        <h3 id = "displayAttribute_exercise1">placeholder</h3>
+        <button type="button" onclick="addAllElements(document.getElementById('inputAttribute_Exercise1').value.split(' '))" id="Exercise1">Exercise 1 Solution</button>
+    </div>
+    <div>
+        <h2>Problem 2</h2>
+        <label>please enter string of number separated by space</label>
+        <input type="text" placeholder="Enter string of numbers separated by spaces" id="inputAttribute_Exercise2">
+        <input type="text" placeholder="Enter number to look up" id="inputAttribute_Exercise2_Parameter2">
+        <h3 id = "displayAttribute_exercise2">placeholder</h3>
+        <button type="button" onclick="findFirstOccurrence(document.getElementById('inputAttribute_Exercise2').value.split(' '),
+        document.getElementById('inputAttribute_Exercise2_Parameter2').value)" id="Exercise2">Exercise 2 Solution</button>
+    </div>
+    <div>
+        <h2>Problem 3</h2>
+        <label>please enter string of number separated by space</label>
+        <input type="text" placeholder="Enter string separated by spaces" id="inputAttribute_Exercise3">
+        <h3 id = "displayAttribute_exercise3">placeholder</h3>
+        <button type="button" onclick="findLongestStringElement(document.getElementById('inputAttribute_Exercise3').value.split(' '))" id="Exercise3">Exercise 3 Solution</button>
+    </div>
+    <script type="text/javascript" src="Week2_HW2_Exercise1.js"></script>
+    <script type="text/javascript" src="Week2_HW2_Exercise2.js"></script>
+    <script type="text/javascript" src="Week2_HW2_Exercise3.js"></script>
+</body>
+</html>
