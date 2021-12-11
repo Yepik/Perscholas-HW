@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styleSheet.css" />
+    <title>Week3 HomeWork 2 Functions</title>
+  </head>
+  <body>
+    <div id="div_problem-1">
+      <label class="text-Box-InputEvent" for="problem-1"
+        >Define a function maxOfThree that takes three numbers as arguments and
+        returns the largest of them.</label
+      >  
+
+      <label class="text-Box-InputEvent" for="inputProblem1StringOfNumbers"
+        >Enter series of numbers I will compare them for you (enter numbers only separated by space)</label
+      >
+      <input
+        class="text-Box-InputEvent"
+        type="text"
+        id="inputProblem1StringOfNumbers"
+      />
+      <p class="text-Box-InputEvent" id="outputForProblem1">click button to get answer</p>
+      <button class="text-Box-InputEvent" type="submit" onclick="document.getElementById('outputForProblem1').innerText=`The value largest value of an input is : ${maxOfThree(document.getElementById('inputProblem1StringOfNumbers').value.split(' '))}`">
+        Click to see solution for Problem 1
+      </button>
+      <button
+        id="click-Me-To-Reveal-Problem"
+        type="submit"
+        onclick="clickMeToRevealProblem('text-Box-InputEvent'); turnOfTheButton('click-Me-To-Reveal-Problem')">
+      
+        Click to see Problem 1
+      </button>
+
+      <script src="Week3_HW2_problem1.js"></script>
+      <script src="Week3_HW2_problem2.js"></script>
+      <script type="text/javascript" src="button-Control.js"></script>
+    </div>
+  </body>
+</html>
