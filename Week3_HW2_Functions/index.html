@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styleSheet.css" />
-    <title>Week3 HomeWork 2 Functions</title>
+    <title>Week3 HomeWork 2 Functions by Jaroslaw Pogoda</title>
   </head>
   <body>
+      <!-- Problem 1 -->
     <div id="div_problem-1">
       <label class="text-Box-InputEvent" for="problem-1"
         >Define a function maxOfThree that takes three numbers as arguments and
@@ -29,13 +30,78 @@
       <button
         id="click-Me-To-Reveal-Problem"
         type="submit"
-        onclick="clickMeToRevealProblem('text-Box-InputEvent'); turnOfTheButton('click-Me-To-Reveal-Problem')">
+        onclick="clickMeToRevealProblem('text-Box-InputEvent'); turnOffTheButton('click-Me-To-Reveal-Problem')">
       
         Click to see Problem 1
       </button>
-
+      </div>
+      <!-- Problem 2 -->
+      <div id="div_problem-2">
+        <label class="text-Box-InputEvent2" for="problem-2"
+          >Take a Celsius temperature from the user and convert it to Fahrenheit and also  take a Fahrenheit temperature from the user and convert it to Celsius</label
+        >  
+  
+        <label class="text-Box-InputEvent2" for="inputProblem2StringOfNumbers"
+          >Enter temperature in degrees either as degrees of Celsius or as degrees of Fahrenheit. I will convert temperature for you just click one of the  buttons</label
+        >
+        <input
+          class="text-Box-InputEvent2"
+          type="text"
+          id="inputProblem2Temperature"
+        />
+        <p class="text-Box-InputEvent2" id="outputForProblem2">click button to get answer</p>
+        <button class="text-Box-InputEvent2" type="submit" onclick="celsiusToFahrenheitDisplay('outputForProblem2',document.getElementById('inputProblem2Temperature').value)">
+          convert Celsius to Fahrenheit
+        </button>
+        <button class="text-Box-InputEvent2" type="submit" onclick="fahrenheitToCelsiusDisplay('outputForProblem2',document.getElementById('inputProblem2Temperature').value)">
+            convert Fahrenheit to Celsius
+          </button>
+        <button
+          id="click-Me-To-Reveal-Problem1"
+          type="submit"
+          onclick="clickMeToRevealProblem('text-Box-InputEvent2'); turnOffTheButton('click-Me-To-Reveal-Problem1')">
+        
+          Click to see Problem 2
+        </button>
+      </div>
+      <!-- Problem 3 -->
+      <div id="div_problem-3">
+        <label class="elementProblem3">Choose a activitity to filter by:
+          <select class="elementProblem3" name="ab" id="activitiesInput" onchange="if (this.selectedIndex) printArrayOfObjects(filterByActivity(student,document.getElementById('activitiesInput').value),'outputForProblem3');">
+            <option value="-1">--</option>
+            <option value="Basketball">Basketball</option> 
+              <option value="Football">Football</option> 
+              <option value="Soccer">Soccer</option> 
+              <option value="Swimming">Swimming</option> 
+              <option value="Volleyball">Volleyball</option> 
+        </select></label>
+        <p class="text-Box-InputEvent3 elementProblem3" id="outputForProblem3">click button to get answer</p>
+        <button
+          id="click-Me-To-Reveal-Problem3"
+          type="submit"
+          onclick="clickMeToRevealProblem('elementProblem3'); turnOffTheButton('click-Me-To-Reveal-Problem3')">
+          Click to see Problem 3
+        </button>
+      </div>
+      <!-- Problem 4 -->
+      <div id="div_problem-3">
+        <input id=inputforProblem4 type="text">
+        <button class="text-Box-InputEvent4" type="submit" onclick="traverseThroughArray(document.getElementById('inputforProblem4').value.split(' '),'outputForProblem4')">
+          retrun index and array 
+        </button>
+        <div id  = "outputForProblem4"></div>
+        <button
+          id="click-Me-To-Reveal-Problem4"
+          type="submit"
+          onclick="clickMeToRevealProblem('text-Box-InputEvent4'); turnOffTheButton('click-Me-To-Reveal-Problem3')">
+          Click to see Problem 4
+        </button>
+      </div>
       <script src="Week3_HW2_problem1.js"></script>
       <script src="Week3_HW2_problem2.js"></script>
+      <script src="Week3_HW2_problem3.js"></script>
+      <script src="Week3_HW2_problem4.js"></script>
+      
       <script type="text/javascript" src="button-Control.js"></script>
     </div>
   </body>
