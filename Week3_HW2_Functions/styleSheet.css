@@ -1,3 +1,13 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color:gold;
+    font-size:2vh;
+}
 .text-Box-InputEvent{
     display:none;
 }
@@ -6,4 +16,38 @@
 }
 .elementProblem3{
     display:none; 
+}
+.text-Box-InputEvent4{
+    display:none;
+}
+.problem{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    background-color: gray;
+    padding: 5px;
+    border-radius: 1vh;
+}
+table{
+    text-align: center;
+    margin:1px;
+    border-radius: 1px;
+    border: 2px solid black;
+}
+tr{
+    border: 2px solid black;  
+    border-radius: 1px;
+}
+td,th{
+    margin:2px;
+    border: 2px solid black;  
+    border-radius: 1px;
+}
+#click-Me-To-hide-Problem4{
+    display:none;
+}
+#click-Me-To-hide-Problem3{
+    display:none;
 }

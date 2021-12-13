@@ -9,7 +9,7 @@
   </head>
   <body>
       <!-- Problem 1 -->
-    <div id="div_problem-1">
+    <div class= "problem" id="div_problem-1">
       <label class="text-Box-InputEvent" for="problem-1"
         >Define a function maxOfThree that takes three numbers as arguments and
         returns the largest of them.</label
@@ -36,7 +36,7 @@
       </button>
       </div>
       <!-- Problem 2 -->
-      <div id="div_problem-2">
+      <div class= "problem" id="div_problem-2">
         <label class="text-Box-InputEvent2" for="problem-2"
           >Take a Celsius temperature from the user and convert it to Fahrenheit and also  take a Fahrenheit temperature from the user and convert it to Celsius</label
         >  
@@ -65,7 +65,7 @@
         </button>
       </div>
       <!-- Problem 3 -->
-      <div id="div_problem-3">
+      <div class= "problem" id="div_problem-3">
         <label class="elementProblem3">Choose a activitity to filter by:
           <select class="elementProblem3" name="ab" id="activitiesInput" onchange="if (this.selectedIndex) printArrayOfObjects(filterByActivity(student,document.getElementById('activitiesInput').value),'outputForProblem3');">
             <option value="-1">--</option>
@@ -79,13 +79,23 @@
         <button
           id="click-Me-To-Reveal-Problem3"
           type="submit"
-          onclick="clickMeToRevealProblem('elementProblem3'); turnOffTheButton('click-Me-To-Reveal-Problem3')">
+          onclick="clickMeToRevealProblem('elementProblem3','click-Me-To-hide-Problem3'); turnOffTheButton('click-Me-To-Reveal-Problem3')">
           Click to see Problem 3
+        </button>
+        <button
+          id="click-Me-To-hide-Problem3"
+          type="submit"
+          onclick="clickMeToHideProblem('elementProblem3','click-Me-To-Reveal-Problem3'); turnOffTheButton('click-Me-To-hide-Problem3')">
+          Click to hide Problem 3
         </button>
       </div>
       <!-- Problem 4 -->
-      <div id="div_problem-3">
-        <input id=inputforProblem4 type="text">
+      <div class= "problem" id="div_problem-3">
+        <label class="text-Box-InputEvent4" for="inputProblem1StringOfNumbers"
+        >Enter array and I will print out for you index and element  (enter each element only separated by space)
+        <input class="text-Box-InputEvent4" id=inputforProblem4 type="text"></label
+      >
+        
         <button class="text-Box-InputEvent4" type="submit" onclick="traverseThroughArray(document.getElementById('inputforProblem4').value.split(' '),'outputForProblem4')">
           retrun index and array 
         </button>
@@ -93,8 +103,14 @@
         <button
           id="click-Me-To-Reveal-Problem4"
           type="submit"
-          onclick="clickMeToRevealProblem('text-Box-InputEvent4'); turnOffTheButton('click-Me-To-Reveal-Problem3')">
+          onclick="clickMeToRevealProblem('text-Box-InputEvent4','click-Me-To-hide-Problem4'); turnOffTheButton('click-Me-To-Reveal-Problem4')">
           Click to see Problem 4
+        </button>
+        <button
+          id="click-Me-To-hide-Problem4"
+          type="submit"
+          onclick="clickMeToHideProblem('text-Box-InputEvent4','click-Me-To-Reveal-Problem4'); turnOffTheButton('click-Me-To-hide-Problem4')">
+          Click to hide Problem 4
         </button>
       </div>
       <script src="Week3_HW2_problem1.js"></script>
