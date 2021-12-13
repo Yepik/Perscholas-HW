@@ -30,10 +30,16 @@
       <button
         id="click-Me-To-Reveal-Problem"
         type="submit"
-        onclick="clickMeToRevealProblem('text-Box-InputEvent'); turnOffTheButton('click-Me-To-Reveal-Problem')">
+        onclick="clickMeToRevealProblem('text-Box-InputEvent','click-Me-To-hide-Problem1'); turnOffTheButton('click-Me-To-Reveal-Problem')">
       
         Click to see Problem 1
       </button>
+      <button
+          id="click-Me-To-hide-Problem1"
+          type="submit"
+          onclick="clickMeToHideProblem('text-Box-InputEvent','click-Me-To-Reveal-Problem'); turnOffTheButton('click-Me-To-hide-Problem1')">
+          Click to hide Problem 1
+        </button>
       </div>
       <!-- Problem 2 -->
       <div class= "problem" id="div_problem-2">
@@ -59,9 +65,15 @@
         <button
           id="click-Me-To-Reveal-Problem1"
           type="submit"
-          onclick="clickMeToRevealProblem('text-Box-InputEvent2'); turnOffTheButton('click-Me-To-Reveal-Problem1')">
+          onclick="clickMeToRevealProblem('text-Box-InputEvent2','click-Me-To-hide-Problem2'); turnOffTheButton('click-Me-To-Reveal-Problem1')">
         
           Click to see Problem 2
+        </button>
+        <button
+          id="click-Me-To-hide-Problem2"
+          type="submit"
+          onclick="clickMeToHideProblem('text-Box-InputEvent2','click-Me-To-Reveal-Problem1'); turnOffTheButton('click-Me-To-hide-Problem2')">
+          Click to hide Problem 1
         </button>
       </div>
       <!-- Problem 3 -->
