@@ -17,16 +17,16 @@
 //         return this.studentName 
 //     },
 // }
-student= [{"studentName":"Chris","activities":["Swimming","Basketball","Soccer"],"gender":"M"},
-{"studentName":"Mary","activities":["Soccer","Volleyball"],"gender":"F"},
-{"studentName":"Chad","activities":["Football","Basketball"],"gender":"M"},
-{"studentName":"Tom","activities":["Volleyball","Soccer"],"gender":"M"},
-{"studentName":"Elisa","activities":["Volleyball", "Basketball"],"gender":"F"},
-{"studentName":"Nora","activities":["Soccer","Swimming"],"gender":"F"},
-{"studentName":"Nancy","activities":["Swimming","Volleyball","Soccer"],"gender":"F"},
-{"studentName":"Dora","activities":["Volleyball","Swimming"],"gender":"F"},
-{"studentName":"Jack","activities":["Soccer","Football"],"gender":"M"},
-{"studentName":"Cory","activities":["Volleyball"],"gender":"M"}]
+student= [{studentName:"Chris",activities:["Swimming","Basketball","Soccer"],gender:"M"},
+{studentName:"Mary",activities:["Soccer","Volleyball"],gender:"F"},
+{studentName:"Chad",activities:["Football","Basketball"],gender:"M"},
+{studentName:"Tom",activities:["Volleyball","Soccer"],gender:"M"},
+{studentName:"Elisa",activities:["Volleyball", "Basketball"],gender:"F"},
+{studentName:"Nora",activities:["Soccer","Swimming"],gender:"F"},
+{studentName:"Nancy",activities:["Swimming","Volleyball","Soccer"],gender:"F"},
+{studentName:"Dora",activities:["Volleyball","Swimming"],gender:"F"},
+{studentName:"Jack",activities:["Soccer","Football"],gender:"M"},
+{studentName:"Cory",activities:["Volleyball"],gender:"M"}]
 
 const printArrayOfObjects = (arrayOfObjects,tagId) =>{
     let outputString = "<table id='tableOutputProblem3'><tr><th>Student's Name</th><th>Activites</th><th>Gender</th></tr>";
