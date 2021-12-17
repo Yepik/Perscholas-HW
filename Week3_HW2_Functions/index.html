@@ -8,6 +8,7 @@
     <title>Week3 HomeWork 2 Functions by Jaroslaw Pogoda</title>
   </head>
   <body>
+    <canvas id="Matrix" >
       <!-- Problem 1 -->
     <div class= "problem" id="div_problem-1">
       <label class="text-Box-InputEvent" for="problem-1"
@@ -82,10 +83,10 @@
           <select class="elementProblem3" name="ab" id="activitiesInput" onchange="if (this.selectedIndex) printArrayOfObjects(filterByActivity(student,document.getElementById('activitiesInput').value),'outputForProblem3');">
             <option value="-1">--</option>
             <option value="Basketball">Basketball</option> 
-              <option value="Football">Football</option> 
-              <option value="Soccer">Soccer</option> 
-              <option value="Swimming">Swimming</option> 
-              <option value="Volleyball">Volleyball</option> 
+            <option value="Football">Football</option> 
+            <option value="Soccer">Soccer</option> 
+            <option value="Swimming">Swimming</option> 
+            <option value="Volleyball">Volleyball</option> 
         </select></label>
         <p class="text-Box-InputEvent3 elementProblem3" id="outputForProblem3">click button to get answer</p>
         <button
@@ -124,11 +125,15 @@
           onclick="clickMeToHideProblem('text-Box-InputEvent4','click-Me-To-Reveal-Problem4'); turnOffTheButton('click-Me-To-hide-Problem4')">
           Click to hide Problem 4
         </button>
+        <p  id="test"></p>
       </div>
+    </canvas>
+    <script src="../../Practice/scripts/matrixEffect.js"></script>
       <script src="Week3_HW2_problem1.js"></script>
       <script src="Week3_HW2_problem2.js"></script>
       <script src="Week3_HW2_problem3.js"></script>
       <script src="Week3_HW2_problem4.js"></script>
+      
       
       <script type="text/javascript" src="button-Control.js"></script>
     </div>

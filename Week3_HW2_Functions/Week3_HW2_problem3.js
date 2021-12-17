@@ -33,6 +33,10 @@ const printArrayOfObjects = (arrayOfObjects,tagId) =>{
     arrayOfObjects.map(object => outputString += `<tr><td>${object.studentName}</td> <td>${object.activities.sort().join(',')}</td> <td>${object.gender}</td></tr>`)
     outputString += '</table>'
     document.getElementById(tagId).innerHTML = outputString}
+//  student.map(elementitem=> {console.log(elementitem);
+//     document.getElementById("test").innerHTML+=elementitem} )
+ 
+//filter by activity
 const filterByActivity = (inputArrayOfStudent,activityToMatch) => inputArrayOfStudent.filter(object =>{
     for(let i = 0; object.activities.length > i; i++){
         if(object.activities[i].toLowerCase()== activityToMatch.toLowerCase())
