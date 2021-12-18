@@ -6,13 +6,8 @@ const boroughsArray = [
   "Queens",
   "staten island",
 ];
-const CONFIGURATION = {
-    "locations": [
-      {"coords":{"lat":36.4617,"lng":-116.8668}},
-      ],
-    "mapOptions": {"center":{"lat":38.0,"lng":-100.0},"fullscreenControl":true,"mapTypeControl":false,"streetViewControl":false,"zoom":4,"zoomControl":true,"maxZoom":17},
-    "mapsApiKey": "AIzaSyBeWHeBD5nyxKPaFNImqXL-eFvQT0Ta5bQ"
-  };
+var locations = [
+];
 const agency = "NYPD";
 const textAreaInput = document.getElementById("inputEvent");
 class boroughs {
@@ -26,7 +21,7 @@ class boroughs {
         }
     this.div = document.getElementById(
       "buttons"
-    ).innerHTML += `<button id="${this.temp_borough}" onclick="${this.temp_borough.toLowerCase()}.fetchingData(${this.temp_borough.toLowerCase()}.borough,'${boroughInput}')">${this.temp_borough}</button>`;
+    ).innerHTML += `<button id="${this.temp_borough}" onclick= "docMap()" onclick="${this.temp_borough.toLowerCase()}.fetchingData(${this.temp_borough.toLowerCase()}.borough,'${boroughInput}')">${this.temp_borough}</button>`;
     this.button = document.getElementById(`${this.temp_borough}`);
     this.borough = boroughInput;
     this.agency = agencyInput;
@@ -66,9 +61,9 @@ class boroughs {
         }
         console.log(latitude, longitude)
         latitude.map((element, index) => {
-            CONFIGURATION.locations.push(`"coords":{"lat":${latitude[index]}, "lon":${longitude[index]}":}`)
+            locations.push([data[index].descriptor,latitude[index], longitude[index]])
         })
-        console.log(CONFIGURATION.locations)
+        console.log(locations)
         let tempArray2=tempArray.sort(( a, b )=> {
             if ( a.descriptor < b.descriptor ){
               return -1;
