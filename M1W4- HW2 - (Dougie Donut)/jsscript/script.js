@@ -6,6 +6,13 @@ const boroughsArray = [
   "Queens",
   "staten island",
 ];
+const CONFIGURATION = {
+    "locations": [
+      {"coords":{"lat":36.4617,"lng":-116.8668}},
+      ],
+    "mapOptions": {"center":{"lat":38.0,"lng":-100.0},"fullscreenControl":true,"mapTypeControl":false,"streetViewControl":false,"zoom":4,"zoomControl":true,"maxZoom":17},
+    "mapsApiKey": "AIzaSyBeWHeBD5nyxKPaFNImqXL-eFvQT0Ta5bQ"
+  };
 const agency = "NYPD";
 const textAreaInput = document.getElementById("inputEvent");
 class boroughs {
@@ -58,6 +65,10 @@ class boroughs {
             longitude.push(data[i].longitude)
         }
         console.log(latitude, longitude)
+        latitude.map((element, index) => {
+            CONFIGURATION.locations.push(`"coords":{"lat":${latitude[index]}, "lon":${longitude[index]}":}`)
+        })
+        console.log(CONFIGURATION.locations)
         let tempArray2=tempArray.sort(( a, b )=> {
             if ( a.descriptor < b.descriptor ){
               return -1;
