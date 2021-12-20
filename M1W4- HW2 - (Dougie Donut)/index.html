@@ -14,15 +14,17 @@
 </head>
 <body>
     <input id="inputEvent" type="number" placeholder="Enter number" value=10>
+    <div id ="outputs">
     <div id="buttons"></div>
     <div id="output"></div>
-    <div id="map" style="width: 500px; height: 400px;"></div>
+    <div id="map" style="width: 500px; height: 400px;"><button type="button" id="" onclick= "map()">map</button></div>
+  </div>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeWHeBD5nyxKPaFNImqXL-eFvQT0Ta5bQ&callback=initMap&libraries=places,geometry&solution_channel=GMP_QB_locatorplus_v4_cABD" async defer></script>  
     <script src="jsscript/script.js"></script>
-    <script type="text/javascript" src="jsscript/maps.js"></script>
+    <!-- <script type="text/javascript" src="jsscript/maps.js"></script> -->
     <script>
-   function docMap(){
-    var map = new google.maps.Map(document.getElementById('map'), {
+   var map = function docMap(){
+    return new google.maps.Map(document.getElementById('map'), {
       zoom: 10,
       
       center: new google.maps.LatLng(40.741895, -73.989308),

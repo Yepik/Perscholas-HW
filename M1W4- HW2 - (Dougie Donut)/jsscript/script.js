@@ -21,7 +21,7 @@ class boroughs {
         }
     this.div = document.getElementById(
       "buttons"
-    ).innerHTML += `<button id="${this.temp_borough}" onclick= "docMap()" onclick="${this.temp_borough.toLowerCase()}.fetchingData(${this.temp_borough.toLowerCase()}.borough,'${boroughInput}')">${this.temp_borough}</button>`;
+    ).innerHTML += `<button id="${this.temp_borough}" onclick="${this.temp_borough.toLowerCase()}.fetchingData(${this.temp_borough.toLowerCase()}.borough,'${boroughInput}')" onclick= 'docMap()'>${this.temp_borough}</button>`;
     this.button = document.getElementById(`${this.temp_borough}`);
     this.borough = boroughInput;
     this.agency = agencyInput;
@@ -61,7 +61,8 @@ class boroughs {
         }
         console.log(latitude, longitude)
         latitude.map((element, index) => {
-            locations.push([data[index].descriptor,latitude[index], longitude[index]])
+            new google.maps.Marker({position:{lat:latitude[index], lng:longitude[index]},map,
+            title:data[index].descriptor})
         })
         console.log(locations)
         let tempArray2=tempArray.sort(( a, b )=> {
