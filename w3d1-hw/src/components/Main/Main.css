@@ -1,0 +1,95 @@
+*{
+    color: #fff;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.Rest{
+    grid-area:rest;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.Main{
+    width: 100vh;
+    height: 100vh;
+    display:grid;
+    grid-template-areas: "bedroom1 livingroom livingroom kitchen"
+                        "FullBathroom livingroom livingroom kitchen"
+                        "bedroom2 halfbathroom bedroom3 bedroom3";
+    grid-template-columns: 40% 20% 20% 20%;
+    grid-template-rows: 40% 20% 40%;
+}
+@media (max-width: 868px){
+    .Main{
+        width: 100vw;
+        height: 100vw;
+    }
+}
+.Bedroom1 {
+    grid-area:bedroom1;
+    background: #2b7188;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.Bedroom2 {
+    grid-area:bedroom2;
+    background: #2b7188;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.Bedroom3 {
+    grid-area:bedroom3;
+    background: #2b7188;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.LivingRoom {
+    grid-area:livingroom;
+    background: #c9ac82;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.FullBathroom {
+    grid-area:FullBathroom;
+    background: #728831;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.HalfBathroom {
+    grid-area:halfbathroom;
+    background: #728831;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.Kitchen {
+    grid-area:kitchen;
+    background: #f1a73b;
+    display:grid;
+    grid-template-areas: "oven sink"
+                        "rest rest";
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 8% 1fr;
+}
+.Sink {
+    grid-area:sink;
+    background: #935613;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.Oven {
+    grid-area:oven;
+    background: #c94716;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
