@@ -5,15 +5,18 @@ function Main(){
     randomize();
     return (
         <div className="Main">
-            {Receipts.map((receipt,index) =>{ 
-            return <Receipt receipt={receipt} key={index} />})}
+            {Receipts.map((receipt,index) =>{
+                // console.log(receipt.paid)
+               return receipt.paid?<div></div>:
+             <Receipt receipt={receipt} key={index} />
+        })}
 
         </div>
     );
 }
 function randomize(){
     Receipts.map((receipt,index) =>{
-        console.log(receipt)
+        
         receipt.paid=Math.random() < 0.5
     })
 }

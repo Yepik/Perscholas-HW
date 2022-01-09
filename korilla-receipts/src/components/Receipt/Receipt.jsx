@@ -1,10 +1,7 @@
 import './Receipt.css'
 function Receipt(props) {
-  console.log(props);
-  {if(props.receipt.paid){
-    return(<div></div>);
-  }
-  else{
+  
+  
   return (
       <div className="Receipt">
       <h2 className="ReceiptName"><span className="ReceiptDataText">{props.receipt.person}</span></h2>
@@ -18,6 +15,6 @@ function Receipt(props) {
       <h3 className="ReceiptOrderCost">Cost: <span className="ReceiptDataText">{props.receipt.order.cost}</span></h3>
     </div>
   );
-  }}
-}
+  }
+
 export default Receipt;
