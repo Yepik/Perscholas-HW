@@ -12,12 +12,12 @@ class Form extends Component {
 }
 handleChange = event => {
     this.setState({ [event.target.id]: event.target.value })
-    this.setState({submitted: true})
+    
 }
 
 handleSubmit = event => {      ///    onClick ... onChange ... onSubmit
     event.preventDefault()
-    console.log(this.state)
+    
     this.props.getGrocery(this.state)
 }
   render() {
@@ -39,15 +39,6 @@ handleSubmit = event => {      ///    onClick ... onChange ... onSubmit
             value={this.state.units}
             type="units"
           />
-
-          <label htmlFor="quantity">Quantity:</label>
-          <input
-            id="quantity"
-            onChange={this.handleChange}
-            value={this.state.quantity}
-            type="quantity"
-          />
-
           <button>Submit</button>
         </form>
       </div>

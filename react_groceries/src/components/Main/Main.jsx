@@ -7,20 +7,54 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      groceries:data
+      groceries:data,
+      purchased:[]
     };
          
   }
   getGrocery=(grocery) =>{
     console.log(grocery);
     this.setState(
-      { groceries: [...this.state.groceries, grocery] },
-      console.log(this.state.groceries)
+      { groceries: [...this.state.groceries, grocery] }
     );
   }
-  handleIsPurchased=event=>{
-    this.setState({groceries: [...this.state.groceries,{...this.state.groceries,isPurchased:true}]})
+  addToPurchased(grocery) {
+    console.log(grocery);
+    this.setState(
+      { purchased: [...this.state.purchased, grocery] },
+      console.log(this.state)
+    );
   }
+  handleIsPurchased=(groceryItem,index)=> {
+    this.setState(groceries=>{ const grocerylist= this.state.groceries.map((grocery,indexitem)=> {
+      if (index === indexitem) {
+        grocery.isPurchased=true
+        return grocery
+      } else {
+        return grocery;
+      }
+    })
+  return grocerylist
+},console.log(this.state.groceries))}
+    
+  
+   
+
+onUpdateItem = i => {
+  this.setState(state => {
+    const list = state.list.map((item, j) => {
+      if (j === i) {
+        return item + 1;
+      } else {
+        return item;
+      }
+    });
+
+    return {
+      list,
+    };
+  });
+};
   handleOnChangeQuantity=event=>{
     this.setState({groceries: {...this.state.groceries,quantity:event.target.value}})
   }
@@ -28,7 +62,8 @@ class Main extends Component {
     return (
       <div className="Main">
         <Form getGrocery={this.getGrocery} />
-        {this.state.groceries.map((groceryItem,index)=><GroceryItem  handleOnChangeQuantity={this.handleOnChangeQuantity} handleIsPurchased={this.handleIsPurchased}grocery={groceryItem} index={index} key={index}/>)}
+        {this.state.groceries.map((groceryItem,index)=>{
+          return groceryItem.isPurchased?<div key={index}></div>:<GroceryItem  handleOnChangeQuantity={this.handleOnChangeQuantity} handleIsPurchased={this.handleIsPurchased}grocery={groceryItem} index={index} key={index}/>})}
       </div>
     );
   }
