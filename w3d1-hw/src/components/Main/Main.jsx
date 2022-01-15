@@ -1,14 +1,18 @@
 import './Main.css'
+import Bedroom from './Bedroom/Bedroom'
+import Bathroom from './Bathroom/Bathroom'
+import Livingroom from './Livingroom/Livingroom'
 function Main(){
     
     return (
         <div className="Main">
-            <div className="Bedroom1"><p className="text">Bedroom 1</p></div>
-            <div className="Bedroom2"><p className="text">Bedroom 2</p></div>
-            <div className="Bedroom3"><p className="text">Bedroom 3</p></div>
-            <div className="LivingRoom"><p className="text">Living Room</p></div>
-            <div className="FullBathroom"><p className="text">Full Bath</p></div>
-            <div className="HalfBathroom"><p className="text">Half Bath</p></div>
+            <Bedroom number={1} />
+            <Bedroom number={2} />
+            <Bedroom number={3} />
+           
+            <Livingroom/>
+            <Bathroom size={"Full"} name={"Full"}/>
+            <Bathroom size={"Half "} name={"Half"}/>
             <div className="Kitchen">
                 <div className="Sink"><p className="text">Sink</p></div>
                 <div className="Oven"><p className="text">Oven</p></div>
