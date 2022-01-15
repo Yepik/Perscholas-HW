@@ -1,6 +1,6 @@
 import React, { Component }from "react";
 
-class GroceryItem extends Component {
+class PurchasedItem extends Component {
     constructor(props) {
         super(props);
         this.state = this.props.grocery
@@ -17,8 +17,8 @@ class GroceryItem extends Component {
 render() {
     
     return(
-        <div className="GroceryItem">
-            <h2>Grocery List</h2>
+        <div className="PurchasedItem">
+            <h2>Purchased</h2>
             <ul>
                 <li>{this.props.grocery.item}</li>
                 <li>{this.props.grocery.units}</li>
@@ -34,4 +34,4 @@ render() {
     )
 }
 }
-export default GroceryItem;
+export default PurchasedItem;

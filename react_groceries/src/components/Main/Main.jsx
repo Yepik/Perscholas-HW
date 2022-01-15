@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Form from "./Form/Form";
 import GroceryItem from "./GroceryList/GroceryItem";
 import data from '../../Data/Data'
-
+import PurchasedItem from "./PuchasedItem/PurchasedItem";
 class Main extends Component {
   constructor(props) {
     super(props);
@@ -13,7 +13,8 @@ class Main extends Component {
          
   }
   getGrocery=(grocery) =>{
-    console.log(grocery);
+    console.log(grocery.isPurchased);
+    grocery.isPurchased = false;
     this.setState(
       { groceries: [...this.state.groceries, grocery] }
     );
@@ -25,45 +26,45 @@ class Main extends Component {
       console.log(this.state)
     );
   }
-  handleIsPurchased=(groceryItem,index)=> {
-    this.setState(groceries=>{ const grocerylist= this.state.groceries.map((grocery,indexitem)=> {
+  handleIsPurchased=(isPurchased,index)=> {
+    const groceriesPurchased=[]
+    this.setState(groceries=>{ 
+      
+      const grocerylist= this.state.groceries.map((grocery,indexitem)=> {
       if (index === indexitem) {
-        grocery.isPurchased=true
+        grocery.isPurchased=isPurchased
+        groceriesPurchased.push(grocery)
         return grocery
       } else {
         return grocery;
       }
     })
-  return grocerylist
-},console.log(this.state.groceries))}
+  return {grocerylist,}
+},this.addToPurchased(groceriesPurchased))
+
+}
+handleIsPurchased1=(isPurchased,index)=> {
+  const groceriesPurchased=[]
+  console.log(index)
+  this.setState(purchased=> {return this.state.purchased.slice(index,1) }
     
-  
-   
+,console.log(this.state))
 
-onUpdateItem = i => {
-  this.setState(state => {
-    const list = state.list.map((item, j) => {
-      if (j === i) {
-        return item + 1;
-      } else {
-        return item;
-      }
-    });
+}
 
-    return {
-      list,
-    };
-  });
-};
   handleOnChangeQuantity=event=>{
     this.setState({groceries: {...this.state.groceries,quantity:event.target.value}})
   }
   render() {
     return (
       <div className="Main">
-        <Form getGrocery={this.getGrocery} />
+        
+        <Form className="Main-Form" getGrocery={this.getGrocery} />
         {this.state.groceries.map((groceryItem,index)=>{
-          return groceryItem.isPurchased?<div key={index}></div>:<GroceryItem  handleOnChangeQuantity={this.handleOnChangeQuantity} handleIsPurchased={this.handleIsPurchased}grocery={groceryItem} index={index} key={index}/>})}
+          return groceryItem.isPurchased?<div key={index}></div>:<GroceryItem className="Main-Grocery " handleOnChangeQuantity={this.handleOnChangeQuantity} handleIsPurchased={this.handleIsPurchased}grocery={groceryItem} index={index} key={index}/>})}
+      {this.state.purchased.map((groceryItem,index)=>{console.log(groceryItem[0])
+          return groceryItem[0].isPurchased?<PurchasedItem className="Main-Purchased " handleOnChangeQuantity={this.handleOnChangeQuantity} handleIsPurchased={this.handleIsPurchased1}grocery={groceryItem[0]} index={index} key={index}/>:<div key={index}></div>})}
+     
       </div>
     );
   }
