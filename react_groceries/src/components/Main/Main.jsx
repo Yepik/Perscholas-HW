@@ -66,6 +66,7 @@ class Main extends Component {
   render() {
     return (
       <div className="Main">
+        <h1 className="FamilyMemberName">{this.props.name}</h1>
         <div className="Main-Form">
         <h2 className="PurchasedTitle">Add item to Grocery List</h2>
           <Form className="Form" getGrocery={this.getGrocery} />
@@ -96,7 +97,7 @@ class Main extends Component {
             return groceryItem[0].isPurchased ? (
               <GroceryItem
                 className="Purchased "
-                buttonName="cancel"
+                buttonName="Remove"
                 title={"Purchased Item"}
                 handleOnChangeQuantity={this.handleOnChangeQuantity}
                 handleIsPurchased={this.handleIsPurchased2}
