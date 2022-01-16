@@ -45,9 +45,7 @@ class Main extends Component {
     this.setState(
       { purchased: [...this.state.purchased.slice(0, index),...this.state.purchased.slice(index + 1)] },
       this.setState(groceries=>{return this.state.groceries.map((grocery,index2)=>{
-        
         if(this.state.purchased[index][0].index===index2){
-          console.log("i was here")
           grocery.isPurchased=false;
           grocery.quantity=0
         }
