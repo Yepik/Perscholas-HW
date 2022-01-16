@@ -25,6 +25,9 @@ class Layout extends Component{
     }
     handleChangeOption = event => {
         console.log(event.target.value)
+        
+    }
+    handleSubmit = event=> {
         this.setState({familyMember:event.target.value},console.log(this.state.familyMember))
     }
     render() {
@@ -32,7 +35,7 @@ class Layout extends Component{
     return(
         <div className="Layout"> 
             <Header/>
-            <select onChange={this.handleChangeOption}>
+            <select onChange={this.handleChangeOption} onSubmit={this.handleSubmit}>
                 <option value={true} >Family Member 1</option>
                 <option value={false} >Family Member 2</option>
                 
