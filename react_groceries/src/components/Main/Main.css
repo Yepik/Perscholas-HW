@@ -1,0 +1,17 @@
+.Main{
+    display: grid;
+    grid-template-areas: "grocery purchased form";
+    grid-template-columns: 45% 45% 10%;
+    grid-template-rows:1fr;
+    
+}
+.Main-Form{
+    grid-area:form;
+
+}
+.Main-Grocery{
+    grid-area:grocery;
+}
+.Main-Purchased{
+    grid-area:purchased;
+}

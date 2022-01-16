@@ -7,7 +7,8 @@ class GroceryItem extends Component {
     }
    handleIsPurchased = (event)=>{
     event.preventDefault();
-    this.props.handleIsPurchased(!this.state.isPurchased,this.props.index)
+    this.props.handleIsPurchased(!this.state.isPurchased,this.props.index,this.state.quantity)
+    this.props.handleOnChangeQuantity(this.state.quantity,this.props.index)
    }
    handleOnChangeQuantity = (event)=>{
         this.setState({ [event.target.id]: event.target.value })
@@ -18,16 +19,16 @@ render() {
     
     return(
         <div className="GroceryItem">
-            <h2>Grocery List</h2>
+            <h2>{this.props.title}</h2>
             <ul>
                 <li>{this.props.grocery.item}</li>
                 <li>{this.props.grocery.units}</li>
                 <li>{this.props.grocery.quantity}</li>
             </ul>
             <form action="" onSubmit={this.handleIsPurchased}>
-            <input type="text" id="quantity"pattern="[0-9]*" onChange={this.handleOnChangeQuantity}
-         value={this.state.quantity} />
-            <button className="isPruchase" >Buy</button>
+            {this.state.isPurchased?<div></div>:<input type="text" id="quantity"pattern="[0-9]*" onChange={this.handleOnChangeQuantity}
+         value={this.state.quantity} />}
+            <button className="isPruchase" >{this.props.buttonName}</button>
             </form>
             
         </div>
