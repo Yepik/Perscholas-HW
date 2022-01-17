@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import Students from "../../Data/Data"
+
 import Student from './Student/Student'
 import './Main.css'
-export default function Main(){
-    const [students, setStudents] = useState(Students)
-    console.log(students)
+// start of functional component Main called by Layout
+// @param props : StudentData
+export default function Main(props){
+    const [students, setStudents] = useState(props.studentData)
     return (
         <div className="Main">
             {students.map((student,index)=>{return <Student student={student} key={index}/>})}
