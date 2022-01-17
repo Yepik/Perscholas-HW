@@ -1,0 +1,13 @@
+.Main{
+    margin-top:8%;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    background: #a12f63;
+    color:#fff;
+    margin-bottom:1%;
+}
+p{
+    font-size:18px;
+}
