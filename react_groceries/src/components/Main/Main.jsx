@@ -13,15 +13,15 @@ class Main extends Component {
     };
   }
   getGrocery = (grocery) => {
-    console.log(grocery.isPurchased);
+    
     grocery.isPurchased = false;
     this.setState({ groceries: [...this.state.groceries, grocery] });
   };
   addToPurchased(grocery) {
-    console.log(grocery);
+    
     this.setState(
       { purchased: [...this.state.purchased, grocery] },
-      console.log(this.state)
+      
     );
   }
   handleIsPurchased = (isPurchased, index) => {
@@ -39,24 +39,28 @@ class Main extends Component {
       });
       return { grocerylist };
     }, this.addToPurchased(groceriesPurchased));
+    console.log(this.state.groceries)
+    console.log(this.state.purchased)
   };
-  handleIsPurchased2 = (isPurchased, index,quantity) => {
-    const groceriesPurchased = [];
-    this.setState(
-      { purchased: [...this.state.purchased.slice(0, index),...this.state.purchased.slice(index + 1)] },
-      this.setState(groceries=>{return this.state.groceries.map((grocery,index2)=>{
-        if(this.state.purchased[index][0].index===index2){
-          grocery.isPurchased=false;
-          grocery.quantity=0
-        }
-        return grocery
-      })},console.log(this.state))
-      
-    );
+
+  handleRemove = (isPurchased, index,quantity) => {
     
+    this.setState(
+      { purchased: [...this.state.purchased.slice(0, index),...this.state.purchased.slice(index + 1)] })
+    this.setState(groceries=>{return groceries.groceries.map((grocery,index2)=>{
+      if(this.state.purchased[index][0].index===index2){
+        grocery.isPurchased=false;
+        grocery.quantity=0
+        alert('here')
+      }
+      return grocery
+      })})
+      console.log(this.state.groceries)
+      console.log(this.state.purchased)
     //this.setState({groceries:{...this.state.groceries,isPurchased:false}},console.log(this.state))
-  };
+  }
   
+
   handleOnChangeQuantity = (event,index) => {
     this.setState(groceries=>{return this.state.groceries.map((grocery,index2)=>{
       if(index===index2){
@@ -64,6 +68,7 @@ class Main extends Component {
     return grocery})})
   };
   render() {
+    
     return (
       <div className="Main">
         <h1 className="FamilyMemberName">{this.props.name}</h1>
@@ -100,7 +105,7 @@ class Main extends Component {
                 buttonName="Remove"
                 title={"Purchased Item"}
                 handleOnChangeQuantity={this.handleOnChangeQuantity}
-                handleIsPurchased={this.handleIsPurchased2}
+                handleIsPurchased={this.handleRemove}
                 grocery={groceryItem[0]}
                 index={index}
                 key={index}
