@@ -1,0 +1,9 @@
+.Starships{
+    display: flex;
+    margin-top:12vh;
+    flex-direction: row;
+    justify-content:center;
+    align-items:center;
+    flex-wrap: wrap;
+    height: 80vh;
+}

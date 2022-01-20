@@ -9,7 +9,7 @@ class Layout extends Component{
         this.state={familyMember:true}
     }
     switcher=()=>{
-        console.log("i was here")
+       
                 switch(this.state.familyMember){
                     case 0:{
                         return <Main name="Family Member 1"/>

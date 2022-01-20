@@ -1,0 +1,10 @@
+.Nav{
+    display:flex;
+    
+}
+.Nav ul li{
+    list-style-type:none;
+}
+.nav-link{
+    list-style-type:none;
+}
