@@ -1,7 +1,7 @@
 import axios from 'axios'
 const url ='http://jservice.io/api/random'
 export default function getData(setQuestion,setAnswer,setJeoperdy,setCategory){
-    console.log(setJeoperdy)
+    
     axios({
     method: 'get',
     url: url,

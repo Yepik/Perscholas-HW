@@ -1,9 +1,15 @@
+import React,{useReducer} from 'react';
+import reducerHideQuestion from "../functions/reducerHideQuestion";
 export default function Question(props) {
+  const [hideQuestion, dispatchHideQuestion] = useReducer(
+    reducerHideQuestion,
+    true
+  );
   return (
     <div className="Question">
       <h3 className="orange">Category:<span className="white">{props.category.title}</span></h3>
       <h3 className="orange">Value:<span className="white">{props.jeoperdy.value}</span></h3>
-      {props.hideQuestion ? null : (
+      {hideQuestion ? null : (
         <h2 className="orange">
           {" "}
           What is <span className="white">{props.question}</span>
@@ -17,9 +23,9 @@ export default function Question(props) {
         disabled={!props.didAnswer}
         className="btn-question"
         onClick={() => {
-          console.log(props.setJeoperdy)
+          
           props.getData(props.setQuestion, props.setAnswer, props.setJeoperdy,props.setCategory);
-          props.dispatchHideQuestion({ type: "new question", payload: true });
+          dispatchHideQuestion({ type: "new question", payload: true });
           props.setDidAnswer(false);
         }}
       >
@@ -28,7 +34,7 @@ export default function Question(props) {
       <button
         className="btn-question"
         onClick={() =>
-          props.dispatchHideQuestion({ type: "hideQuestion", payload: !props.hideQuestion })
+          dispatchHideQuestion({ type: "hideQuestion", payload: !hideQuestion })
         }
       >
         Reveal the question
