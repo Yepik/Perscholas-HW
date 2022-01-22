@@ -1,0 +1,34 @@
+.App{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius: 2%;
+    flex-direction: column;
+    background: #3e5f73;
+    height:100vh;
+    font-size: 120%;
+}
+h1{
+    color: #fff;
+}
+.App-lets-play{
+    color:#ead27a;
+}
+h2{ 
+    color:#ead27a;
+}
+.orange{
+    color:#ead27a;
+    
+}
+.white{
+    color: #fff;
+    
+}
+button{
+    border-radius: 5px;
+    font-size: 1.4em;
+}
+select{
+    font-size: 1.4em;
+}

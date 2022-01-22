@@ -2,7 +2,7 @@ export default function Score(props) {
   
     return (
     <div className="Score">
-      <h2>Score:{props.score}</h2>
+      <h2 className="orange">Score:<span className="white">{props.score}</span></h2>
       <button
         disabled={props.didAnswer}
         onClick={() => {

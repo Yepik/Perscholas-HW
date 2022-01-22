@@ -1,23 +1,24 @@
 export default function Question(props) {
   return (
     <div className="Question">
-      <h3>Category:{props.jeoperdy.category.title}</h3>
-      <h3>Value:{props.jeoperdy.value}</h3>
+      <h3 className="orange">Category:<span className="white">{props.category.title}</span></h3>
+      <h3 className="orange">Value:<span className="white">{props.jeoperdy.value}</span></h3>
       {props.hideQuestion ? null : (
-        <h2>
+        <h2 className="orange">
           {" "}
-          What is <span>{props.question}</span>
+          What is <span className="white">{props.question}</span>
         </h2>
       )}
-      <h2>
+      <h2 className="orange">
         {" "}
-        Answer :<span>{props.answer}</span>
+        Answer :<span className="white">{props.answer}</span>
       </h2>
       <button
         disabled={!props.didAnswer}
         className="btn-question"
         onClick={() => {
-          props.getData(props.setQuestion, props.setAnswer, props.setJeoperdy);
+          console.log(props.setJeoperdy)
+          props.getData(props.setQuestion, props.setAnswer, props.setJeoperdy,props.setCategory);
           props.dispatchHideQuestion({ type: "new question", payload: true });
           props.setDidAnswer(false);
         }}
