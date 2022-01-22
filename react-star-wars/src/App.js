@@ -100,10 +100,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Starships data={starshipsData}/>} />
             <Route path="/starships" element={<Starships data={starshipsData} isLoadMore={isLoadMore} setIsLoadMore={setIsLoadMore} handleLoadMore={handleLoadMore}/>} />
-            <Route path="*" element={<Error/>}/>
             <Route path='/planets'element={<Planets planets={planets} handleLoadMorePlanets={handleLoadMorePlanets} isLoadMorePlanets={isLoadMorePlanets}/>}/>
-            {starshipsData.map((starship, index) =><Route path={`/starships/starship${index}`} element={<StarshipInfo starship={starship} key={index} />} key={index}/>)}
-            {starshipsData.map((starship, index) =><Route path={`/starship${index}`} element={<StarshipInfo starship={starship} key={index} />} key={index}/>)}
+            {starshipsData.map((starship, index) =><Route path={`/starships/starship/:id`} element={<StarshipInfo starship={starship} key={index} />} key={index}/>)}
+            {starshipsData.map((starship, index) =><Route path={`/starship/:id`} element={<StarshipInfo starship={starship} key={index} />} key={index}/>)}
+            <Route path="*" element={<Error/>}/>
           </Routes>
           
         <Footer/>

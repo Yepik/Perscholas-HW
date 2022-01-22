@@ -1,8 +1,9 @@
 import React from "react";
 import './StarshipInfo.css'
-import {useNavigate} from "react-router-dom"
+import {useNavigate,useParams} from "react-router-dom"
 export default function StarshipInfo(props) {
     let navigate=useNavigate()
+    const id=useParams()
   return (
     <div className="StarshipInfo">
         <button onClick={()=> {navigate('/starships')}}>Go Back</button>
